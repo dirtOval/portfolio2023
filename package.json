@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.6.4"
+  },
+  "devDependencies": {
+    "vite": "^4.3.5"
   }
 }
