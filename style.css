@@ -16,7 +16,7 @@ h2 {
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h4 {
@@ -24,7 +24,7 @@ h4 {
 }
 
 p {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 li {
@@ -38,29 +38,100 @@ ul {
 
 /* sections */
 
+
 .slide {
+  position: absolute;
   display: none;
+  /* border-radius: 5%; */
+  width: 80%;
+  height: 80%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid white; */
+
 }
 
 .active {
   display: flex;
 }
 
+.hello {
+  /* height: 100%; */
+}
+
 .intro {
+  justify-content: space-between;
+}
+
+.name-banner {
+  display: flex;
   flex-direction: column;
+  /* border: 1px solid yellow; */
+  height: 33%;
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.two-column {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  /* align-items: space-between; */
+  /* border: 1px solid green; */
+  /* justify-content: center; */
   align-items: center;
+}
+
+.facts {
+  /* border: 1px solid pink; */
+  width: 33%;
+
+}
+
+.facts p {
+  margin-bottom: 11%;
+
+}
+
+.mike-container {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 33%;
+}
+
+.mike-container img {
+  /* width: 25%; */
+  width: 100%;
+  height: auto;
+  /* border: 1px solid yellow; */
+  /* display: inline; */
+}
+
+.mike-container p {
+  /* border: 1px solid blue; */
+  margin-top: 1rem;
 }
 
 .tech-section {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
 }
+
+
 
 .tech-list {
   display: grid;
   grid-template-columns: .33fr .33fr;
+}
+
+.contact {
 }
 
 /* widgets */
@@ -68,8 +139,24 @@ ul {
 .button {
 
   border: 1px solid white;
+  cursor: pointer;
+}
+
+.deirdre-zone {
   border-radius: 5%;
   width: 12rem;
   font-size: 2rem;
-  cursor: pointer;
+}
+
+.more {
+  width: 12rem;
+  height: 2.5rem;
+  margin-left: 10%;
+}
+
+.more-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
 }

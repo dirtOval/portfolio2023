@@ -16,8 +16,7 @@ let updatePage = () => {
     counter = 0;
   }
   $(slides[counter]).toggleClass('active');
-
-  console.log(`counter is ${counter}`);
+  // console.log(`counter is ${counter}`);
 }
 
 
