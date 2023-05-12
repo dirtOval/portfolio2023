@@ -51,7 +51,7 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* border: 1px solid white; */
+  border: 1px solid white;
 
 }
 
@@ -121,14 +121,13 @@ ul {
 }
 
 .tech-section {
-
+  justify-content: space-between;
 }
 
-
-
 .tech-list {
-  display: grid;
-  grid-template-columns: .33fr .33fr;
+  margin-top: 5rem;
+  /* display: grid;
+  grid-template-columns: .33fr .33fr; */
 }
 
 .contact {
@@ -160,3 +159,66 @@ ul {
   align-items: flex-start;
   width: 100%;
 }
+
+.projects-button {
+  width: 10rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-button-container {
+  display: flex;
+  width: 100%;
+  /* border: 1px solid blue; */
+  justify-content: center;
+
+}
+
+/* tech node apparatus */
+
+.node-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.node {
+  --d: 3rem; /* image size */
+  --rel: 1;
+  --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan)); /* circle radius */
+  --s: calc(2*var(--r) + var(--d)); /* container size */
+  width: var(--s);
+  height: var(--s);
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.lang {
+
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  display: none;
+}
+
+.node .icon {
+  display: inline;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc(-.5*var(--d));
+  --az: calc(var(--i)*1turn/var(--m));
+  transform: rotate(var(--az)) translate(var(--r)) rotate(calc(-1*var(--az)));
+}
+/* .node:hover p {
+  display: none;
+} */
