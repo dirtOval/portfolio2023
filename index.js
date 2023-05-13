@@ -36,6 +36,14 @@ const testing = ['images/jest.png',
                  'images/ec2.png',
                  'images/pythonanywhere.png'];
 
+const misc = ['images/vim.png',
+              'images/git.png',
+              'images/npm.png',
+              'images/webpack.png',
+              'images/vite.png',
+              'images/babel.png',
+              'images/pip.png'];
+
 
 let updatePage = () => {
   $(slides[counter]).toggleClass('active');
@@ -51,6 +59,7 @@ const langTan = Math.tan(Math.PI/languages.length);
 const frontTan = Math.tan(Math.PI/frontEnd.length);
 const backTan = Math.tan(Math.PI/backEnd.length);
 const testTan = Math.tan(Math.PI/testing.length);
+const miscTan = Math.tan(Math.PI/misc.length);
 
 $(document).ready(function() {
 
@@ -72,11 +81,15 @@ $(document).ready(function() {
   let $testNode = $(`<div class="node test-node" style="
                           --m: ${testing.length};
                           --tan: ${testTan.toFixed(2)};"></div>`);
+  let $miscNode = $(`<div class="node misc-node" style="
+                          --m: ${misc.length};
+                          --tan: ${miscTan.toFixed(2)};"></div>`);
 
   $techList.append($langNode);
   $techList.append($frontNode);
   $techList.append($backNode);
   $techList.append($testNode);
+  $techList.append($miscNode);
 
   let $langBubble = $('<div class="bubble lang-bubble">Languages</div>');
   $langNode.append($langBubble);
@@ -86,6 +99,8 @@ $(document).ready(function() {
   $backNode.append($backBubble);
   let $testBubble = $('<div class="bubble test-bubble">Test/Deploy</div>');
   $testNode.append($testBubble);
+  let $miscBubble = $('<div class="bubble misc-bubble">DevTools/Misc</div>');
+  $miscNode.append($miscBubble);
 
   for (let i = 0; i < languages.length; i++) {
     const $language = $(`<img class="icon lang" style="--i: ${i};" src=${languages[i]} />`);
@@ -105,6 +120,11 @@ $(document).ready(function() {
   for (let i = 0; i < testing.length; i++) {
     const $test = $(`<img class="icon test" style="--i: ${i};" src=${testing[i]} />`);
     $testNode.append($test);
+  }
+
+  for (let i = 0; i < misc.length; i++) {
+    const $misc = $(`<img class="icon misc" style="--i: ${i};" src=${misc[i]} />`);
+    $miscNode.append($misc);
   }
 
   // $langNode.on('animationend', () => {
