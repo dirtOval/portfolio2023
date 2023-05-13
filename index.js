@@ -1,7 +1,7 @@
 import * as $ from 'jquery';
 
 let counter = 0
-let slides = [
+const slides = [
   '.hello',
   '.intro',
   '.tech-section',
@@ -9,17 +9,26 @@ let slides = [
   '.contact'
 ]
 
-let languages = ['images/js.png',
+const languages = ['images/js.png',
                  'images/typescript.png',
                  'images/python.png'];
 
-let frontEnd = ['images/html-5.png',
+const frontEnd = ['images/html-5.png',
                 'images/css-3.png',
                 'images/scss.png',
                 'images/jquery.png',
                 'images/react.png',
                 'images/react-native.png',
                 'images/three.png'];
+
+const backEnd = ['images/node-js.png',
+                 'images/express.png',
+                 'images/django.png',
+                 'images/rest.png',
+                 'images/mongo.png',
+                 'images/mysql.jpg',
+                 'images/sqlite.png',
+                 'images/postgres.png']
 
 
 let updatePage = () => {
@@ -32,8 +41,9 @@ let updatePage = () => {
   // console.log(`counter is ${counter}`);
 }
 
-let langTan = Math.tan(Math.PI/languages.length);
-let frontTan = Math.tan(Math.PI/frontEnd.length);
+const langTan = Math.tan(Math.PI/languages.length);
+const frontTan = Math.tan(Math.PI/frontEnd.length);
+const backTan = Math.tan(Math.PI/backEnd.length);
 
 $(document).ready(function() {
 
@@ -49,13 +59,20 @@ $(document).ready(function() {
   let $frontNode = $(`<div class="node front-node" style="
                           --m: ${frontEnd.length};
                           --tan: ${frontTan.toFixed(2)};"></div>`);
+  let $backNode = $(`<div class="node back-node" style="
+                          --m: ${backEnd.length};
+                          --tan: ${backTan.toFixed(2)};"></div>`);
+
   $techList.append($langNode);
   $techList.append($frontNode);
+  $techList.append($backNode);
 
   let $langBubble = $('<div class="bubble lang-bubble">Languages</div>');
   $langNode.append($langBubble);
   let $frontBubble = $('<div class="bubble front-bubble">Front End</div>');
   $frontNode.append($frontBubble);
+  let $backBubble = $('<div class="bubble back-bubble">Back End</div>');
+  $backNode.append($backBubble);
 
   for (let i = 0; i < languages.length; i++) {
     const $language = $(`<img class="icon lang" style="--i: ${i};" src=${languages[i]} />`);
@@ -65,6 +82,11 @@ $(document).ready(function() {
   for (let i = 0; i < frontEnd.length; i++) {
     const $frontEnd = $(`<img class="icon front" style="--i: ${i};" src=${frontEnd[i]} />`);
     $frontNode.append($frontEnd);
+  }
+
+  for (let i = 0; i < backEnd.length; i++) {
+    const $backEnd = $(`<img class="icon back" style="--i: ${i};" src=${backEnd[i]} />`);
+    $backNode.append($backEnd);
   }
 
   // $langNode.on('animationend', () => {
