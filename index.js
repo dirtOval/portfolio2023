@@ -13,6 +13,14 @@ let languages = ['images/js.png',
                  'images/typescript.png',
                  'images/python.png'];
 
+let frontEnd = ['images/html-5.png',
+                'images/css-3.png',
+                'images/scss.png',
+                'images/jquery.png',
+                'images/react.png',
+                'images/react-native.png',
+                'images/three.png'];
+
 
 let updatePage = () => {
   $(slides[counter]).toggleClass('active');
@@ -25,6 +33,7 @@ let updatePage = () => {
 }
 
 let langTan = Math.tan(Math.PI/languages.length);
+let frontTan = Math.tan(Math.PI/frontEnd.length);
 
 $(document).ready(function() {
 
@@ -33,16 +42,30 @@ $(document).ready(function() {
   })
 
   let $techList = $('.tech-list');
-  let $langNode = $(`<div class="node lang" style="
+
+  let $langNode = $(`<div class="node lang-node" style="
                           --m: ${languages.length};
-                          --tan: ${langTan.toFixed(2)};">Languages</div>`);
+                          --tan: ${langTan.toFixed(2)};"></div>`);
+  let $frontNode = $(`<div class="node front-node" style="
+                          --m: ${frontEnd.length};
+                          --tan: ${frontTan.toFixed(2)};"></div>`);
   $techList.append($langNode);
+  $techList.append($frontNode);
+
+  let $langBubble = $('<div class="bubble lang-bubble">Languages</div>');
+  $langNode.append($langBubble);
+  let $frontBubble = $('<div class="bubble front-bubble">Front End</div>');
+  $frontNode.append($frontBubble);
+
   for (let i = 0; i < languages.length; i++) {
-    const $language = $(`<img class="icon lang" style="--i: ${i};" src=${languages[i]} />`)
+    const $language = $(`<img class="icon lang" style="--i: ${i};" src=${languages[i]} />`);
     $langNode.append($language);
   }
 
-  let $icons = $('.lang');
+  for (let i = 0; i < frontEnd.length; i++) {
+    const $frontEnd = $(`<img class="icon front" style="--i: ${i};" src=${frontEnd[i]} />`);
+    $frontNode.append($frontEnd);
+  }
 
   // $langNode.on('animationend', () => {
   // })
