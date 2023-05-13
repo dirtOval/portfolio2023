@@ -222,6 +222,54 @@ $(document).ready(function() {
     $gamesNode.append($game);
   }
 
+  let $langLi = $('.lang-li');
+  $langNode.on('mouseenter', () => {
+    $langLi.css('color', 'rgba(255, 255, 255, 1)');
+  })
+  $langNode.on('mouseleave', () => {
+    $langLi.css('color', '');
+  })
+
+  let $frontLi = $('.front-li');
+  $frontNode.on('mouseenter', () => {
+    $frontLi.css('color', 'rgba(255, 255, 255, 1)');
+  })
+  $frontNode.on('mouseleave', () => {
+    $frontLi.css('color', '');
+  })
+
+  let $backLi = $('.back-li');
+  $backNode.on('mouseenter', () => {
+    $backLi.css('color', 'rgba(255, 255, 255, 1)');
+  })
+  $backNode.on('mouseleave', () => {
+    $backLi.css('color', '');
+  })
+
+  let $testLi = $('.test-li');
+  $testNode.on('mouseenter', () => {
+    $testLi.css('color', 'rgba(255, 255, 255, 1)');
+  })
+  $testNode.on('mouseleave', () => {
+    $testLi.css('color', '');
+  })
+
+  let $miscLi = $('.misc-li');
+  $miscNode.on('mouseenter', () => {
+    $miscLi.css('color', 'rgba(255, 255, 255, 1)');
+  })
+  $miscNode.on('mouseleave', () => {
+    $miscLi.css('color', '');
+  })
+
+  let $gamesLi = $('.games-li');
+  $gamesNode.on('mouseenter', () => {
+    $gamesLi.css('color', 'rgba(255, 255, 255, 1)');
+  })
+  $gamesNode.on('mouseleave', () => {
+    $gamesLi.css('color', '');
+  })
+
   // $langNode.on('animationend', () => {
   // })
   // $langNode.on('mouseenter', () => {
