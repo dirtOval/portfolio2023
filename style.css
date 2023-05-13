@@ -186,8 +186,8 @@ ul {
 }
 
 .node {
-  --d: 3rem; /* image size */
-  --rel: 1;
+  --d: 2rem; /* image size */
+  --rel: 6;
   --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan)); /* circle radius */
   --s: calc(2*var(--r) + var(--d)); /* container size */
   width: var(--s);
@@ -200,21 +200,19 @@ ul {
 }
 
 
-.lang {
-
-}
-
 .icon {
-  width: 3rem;
-  height: 3rem;
-  display: none;
+  /* animation: 0.5s ease-in alternate popout; */
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  /* display: none; */
+  transition: transform 0.5s ease-in;
 }
 
-.node .icon {
+.node:hover .icon {
   display: inline;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  /* top: 50%; */
+  /* left: 50%; */
   margin: calc(-.5*var(--d));
   --az: calc(var(--i)*1turn/var(--m));
   transform: rotate(var(--az)) translate(var(--r)) rotate(calc(-1*var(--az)));
@@ -222,3 +220,13 @@ ul {
 /* .node:hover p {
   display: none;
 } */
+
+@keyframes popout {
+  from {
+    transform: rotate(0) translate(0);
+  }
+
+  to {
+    transform: rotate(var(--az)) translate(var(--r)) rotate(calc(-1*var(--az)));
+  }
+}

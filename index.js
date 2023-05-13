@@ -38,9 +38,26 @@ $(document).ready(function() {
                           --tan: ${langTan.toFixed(2)};">Languages</div>`);
   $techList.append($langNode);
   for (let i = 0; i < languages.length; i++) {
-    const $language = $(`<img class="icon" style="--i: ${i};" src=${languages[i]} />`)
+    const $language = $(`<img class="icon lang" style="--i: ${i};" src=${languages[i]} />`)
     $langNode.append($language);
   }
+
+  let $icons = $('.lang');
+
+  // $langNode.on('animationend', () => {
+  // })
+  // $langNode.on('mouseenter', () => {
+  //   // $icons.css('animation-direction', 'reverse')
+  //   $icons.css('animation-play-state', 'running',
+  //              'display', 'inline');
+  // })
+  // $langNode.on('mouseleave', () => {
+  //   // $icons.css('animation-direction', 'reverse')
+  //   // $icons.css('animation-play-state', 'running');
+  // })
+  // // $icons.bind('oanimationend animationend webkitAnimationEnd', () => {
+  // //   $icons.css('display', 'none');
+  // // })
 
 
 })
