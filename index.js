@@ -73,31 +73,111 @@ $(document).ready(function() {
 
   let $techList = $('.tech-list');
 
+  let $langGroup = $(`<div class="group"></div>`);
   let $langNode = $(`<div class="node lang-node" style="
                           --m: ${languages.length};
                           --tan: ${langTan.toFixed(2)};"></div>`);
+  let $langList = $(`
+    <ul>
+      <li class="lang-li">JavaScript</li>
+      <li class="lang-li">TypeScript</li>
+      <li class="lang-li">Python</li>
+    </ul>
+  `)
+  $langGroup.append($langNode);
+  $langGroup.append($langList);
+
+  let $frontGroup = $(`<div class="group"></div>`);
   let $frontNode = $(`<div class="node front-node" style="
                           --m: ${frontEnd.length};
                           --tan: ${frontTan.toFixed(2)};"></div>`);
+  let $frontList = $(`
+    <ul>
+      <li class="front-li">HTML 5</li>
+      <li class="front-li">CSS 3</li>
+      <li class="front-li">SCSS</li>
+      <li class="front-li">jQuery</li>
+      <li class="front-li">React</li>
+      <li class="front-li">React Native</li>
+      <li class="front-li">Three.js</li>
+    </ul>
+  `);
+  $frontGroup.append($frontNode);
+  $frontGroup.append($frontList);
+
+  let $backGroup = $(`<div class="group"></div>`);
   let $backNode = $(`<div class="node back-node" style="
                           --m: ${backEnd.length};
                           --tan: ${backTan.toFixed(2)};"></div>`);
+  let $backList = $(`
+    <ul>
+      <li class="back-li">Node.js</li>
+      <li class="back-li">Express</li>
+      <li class="back-li">Django</li>
+      <li class="back-li">RESTful APIs</li>
+      <li class="back-li">MongoDB</li>
+      <li class="back-li">MySQL</li>
+      <li class="back-li">SQLite</li>
+      <li class="back-li">PostgreSQL</li>
+    </ul>
+  `)
+  $backGroup.append($backNode);
+  $backGroup.append($backList);
+
+  let $testGroup = $(`<div class="group"></div>`);
   let $testNode = $(`<div class="node test-node" style="
                           --m: ${testing.length};
                           --tan: ${testTan.toFixed(2)};"></div>`);
+  let $testList = $(`
+    <ul>
+      <li class="test-li">Jest</li>
+      <li class="test-li">Mocha</li>
+      <li class="test-li">Chai</li>
+      <li class="test-li">EC2</li>
+      <li class="test-li">PythonAnywhere</li>
+    </ul>
+  `)
+  $testGroup.append($testNode);
+  $testGroup.append($testList);
+
+  let $miscGroup = $(`<div class="group"></div>`);
   let $miscNode = $(`<div class="node misc-node" style="
                           --m: ${misc.length};
                           --tan: ${miscTan.toFixed(2)};"></div>`);
+  let $miscList = $(`
+    <ul>
+      <li class="misc-li">Vim</li>
+      <li class="misc-li">Git</li>
+      <li class="misc-li">npm</li>
+      <li class="misc-li">Webpack</li>
+      <li class="misc-li">Vite</li>
+      <li class="misc-li">Babel</li>
+      <li class="misc-li">PyPi</li>
+    </ul>
+  `)
+  $miscGroup.append($miscNode);
+  $miscGroup.append($miscList);
+
+  let $gamesGroup = $(`<div class="group"></div>`);
   let $gamesNode = $(`<div class="node games-node" style="
                           --m: ${games.length};
                           --tan: ${gamesTan.toFixed(2)};"></div>`);
+  let $gamesList = $(`
+    <ul>
+      <li class="games-li">Phaser 3</li>
+      <li class="games-li">Colyseus</li>
+      <li class="games-li">Unity</li>
+    </ul>
+  `)
+  $gamesGroup.append($gamesNode);
+  $gamesGroup.append($gamesList);
 
-  $techList.append($langNode);
-  $techList.append($frontNode);
-  $techList.append($backNode);
-  $techList.append($testNode);
-  $techList.append($miscNode);
-  $techList.append($gamesNode);
+  $techList.append($langGroup);
+  $techList.append($frontGroup);
+  $techList.append($backGroup);
+  $techList.append($testGroup);
+  $techList.append($miscGroup);
+  $techList.append($gamesGroup);
 
   let $langBubble = $('<div class="bubble lang-bubble">Languages</div>');
   $langNode.append($langBubble);
