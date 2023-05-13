@@ -44,6 +44,9 @@ const misc = ['images/vim.png',
               'images/babel.png',
               'images/pip.png'];
 
+const games = ['images/phaser.png',
+               'images/colyseus.jpg',
+               'images/unity.png'];
 
 let updatePage = () => {
   $(slides[counter]).toggleClass('active');
@@ -60,6 +63,7 @@ const frontTan = Math.tan(Math.PI/frontEnd.length);
 const backTan = Math.tan(Math.PI/backEnd.length);
 const testTan = Math.tan(Math.PI/testing.length);
 const miscTan = Math.tan(Math.PI/misc.length);
+const gamesTan = Math.tan(Math.PI/games.length);
 
 $(document).ready(function() {
 
@@ -84,12 +88,16 @@ $(document).ready(function() {
   let $miscNode = $(`<div class="node misc-node" style="
                           --m: ${misc.length};
                           --tan: ${miscTan.toFixed(2)};"></div>`);
+  let $gamesNode = $(`<div class="node games-node" style="
+                          --m: ${games.length};
+                          --tan: ${gamesTan.toFixed(2)};"></div>`);
 
   $techList.append($langNode);
   $techList.append($frontNode);
   $techList.append($backNode);
   $techList.append($testNode);
   $techList.append($miscNode);
+  $techList.append($gamesNode);
 
   let $langBubble = $('<div class="bubble lang-bubble">Languages</div>');
   $langNode.append($langBubble);
@@ -101,6 +109,8 @@ $(document).ready(function() {
   $testNode.append($testBubble);
   let $miscBubble = $('<div class="bubble misc-bubble">DevTools/Misc</div>');
   $miscNode.append($miscBubble);
+  let $gamesBubble = $('<div class="bubble games-bubble">Games</div>');
+  $gamesNode.append($gamesBubble);
 
   for (let i = 0; i < languages.length; i++) {
     const $language = $(`<img class="icon lang" style="--i: ${i};" src=${languages[i]} />`);
@@ -125,6 +135,11 @@ $(document).ready(function() {
   for (let i = 0; i < misc.length; i++) {
     const $misc = $(`<img class="icon misc" style="--i: ${i};" src=${misc[i]} />`);
     $miscNode.append($misc);
+  }
+
+  for (let i = 0; i < games.length; i++) {
+    const $game = $(`<img class="icon game" style="--i: ${i};" src=${games[i]} />`);
+    $gamesNode.append($game);
   }
 
   // $langNode.on('animationend', () => {
