@@ -28,7 +28,13 @@ const backEnd = ['images/node-js.png',
                  'images/mongo.png',
                  'images/mysql.jpg',
                  'images/sqlite.png',
-                 'images/postgres.png']
+                 'images/postgres.png'];
+
+const testing = ['images/jest.png',
+                 'images/mocha.png',
+                 'images/chai.png',
+                 'images/ec2.png',
+                 'images/pythonanywhere.png'];
 
 
 let updatePage = () => {
@@ -44,6 +50,7 @@ let updatePage = () => {
 const langTan = Math.tan(Math.PI/languages.length);
 const frontTan = Math.tan(Math.PI/frontEnd.length);
 const backTan = Math.tan(Math.PI/backEnd.length);
+const testTan = Math.tan(Math.PI/testing.length);
 
 $(document).ready(function() {
 
@@ -62,10 +69,14 @@ $(document).ready(function() {
   let $backNode = $(`<div class="node back-node" style="
                           --m: ${backEnd.length};
                           --tan: ${backTan.toFixed(2)};"></div>`);
+  let $testNode = $(`<div class="node test-node" style="
+                          --m: ${testing.length};
+                          --tan: ${testTan.toFixed(2)};"></div>`);
 
   $techList.append($langNode);
   $techList.append($frontNode);
   $techList.append($backNode);
+  $techList.append($testNode);
 
   let $langBubble = $('<div class="bubble lang-bubble">Languages</div>');
   $langNode.append($langBubble);
@@ -73,6 +84,8 @@ $(document).ready(function() {
   $frontNode.append($frontBubble);
   let $backBubble = $('<div class="bubble back-bubble">Back End</div>');
   $backNode.append($backBubble);
+  let $testBubble = $('<div class="bubble test-bubble">Test/Deploy</div>');
+  $testNode.append($testBubble);
 
   for (let i = 0; i < languages.length; i++) {
     const $language = $(`<img class="icon lang" style="--i: ${i};" src=${languages[i]} />`);
@@ -87,6 +100,11 @@ $(document).ready(function() {
   for (let i = 0; i < backEnd.length; i++) {
     const $backEnd = $(`<img class="icon back" style="--i: ${i};" src=${backEnd[i]} />`);
     $backNode.append($backEnd);
+  }
+
+  for (let i = 0; i < testing.length; i++) {
+    const $test = $(`<img class="icon test" style="--i: ${i};" src=${testing[i]} />`);
+    $testNode.append($test);
   }
 
   // $langNode.on('animationend', () => {

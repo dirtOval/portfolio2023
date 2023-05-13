@@ -226,6 +226,15 @@ ul {
   height: var(--s);
 }
 
+.test-node {
+  --d: 2rem; /* image size */
+  --rel: 2;
+  --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan)); /* circle radius */
+  --s: calc(2*var(--r) + var(--d)); /* container size */
+  width: var(--s);
+  height: var(--s);
+}
+
 .bubble {
   border: 1px solid green;
   width: 5rem;
@@ -266,6 +275,15 @@ ul {
 }
 
 .back-node:hover .back {
+  display: inline;
+  /* top: 50%; */
+  /* left: 50%; */
+  margin: calc(-.5*var(--d));
+  --az: calc(var(--i)*1turn/var(--m));
+  transform: rotate(var(--az)) translate(var(--r)) rotate(calc(-1*var(--az)));
+}
+
+.test-node:hover .test {
   display: inline;
   /* top: 50%; */
   /* left: 50%; */
