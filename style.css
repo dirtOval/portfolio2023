@@ -148,6 +148,7 @@ ul {
 }
 
 .contact {
+  justify-content: space-around;
 }
 
 /* buttons & more! */
@@ -198,6 +199,14 @@ ul {
 
 .contact-button {
   margin: 1rem;
+  width: 40%;
+  height: 3.5rem;
+}
+
+.restart {
+  width: 30%;
+  height: 3rem;
+  font-size: 1.5rem;
 }
 
 /* tech node apparatus */
@@ -422,4 +431,20 @@ ul {
   overflow-y: auto;
   height: 60%;
   /* border: 1px solid magenta; */
+}
+
+/* Contact Page */
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 33%;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0.1rem;;
+  left: 0.5rem;
+  font-size: 0.75rem;
 }
