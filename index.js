@@ -137,7 +137,13 @@ $(document).ready(function() {
   updateProject();
 
   $('.button').click(() => {
-    updatePage();
+    const slide = $('.active');
+    slide.css('animation', 'flydown 0.65s linear');
+    slide.on('animationend', () => {
+      slide.off('animationend');
+      slide.css('animation', 'blinkon 0.65s linear');
+      updatePage();
+    })
   })
 
   $('.right').click(() => {

@@ -1,13 +1,17 @@
 body {
-  background: black;
+  background: darkblue;
   color: white;
   text-align: center;
   font-family: sans-serif;
+  overflow: hidden;
+
+  --animate-time: 0.55s;
 }
 
 /* headers & fonts*/
 
 h1 {
+  animation: h1grow var(--animate-time) linear;
   font-size: 16rem;
 }
 
@@ -42,11 +46,12 @@ ul {
 
 
 .slide {
+  animation: blinkon var(--animate-time) linear;
   position: absolute;
   display: none;
   /* border-radius: 5%; */
   width: 80%;
-  height: 80%;
+  height: 85%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -54,6 +59,7 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid white;
+  background: rgba(0, 0, 0, 0.75)
 
 }
 
@@ -61,12 +67,16 @@ ul {
   display: flex;
 }
 
+.closing {
+  animation: blinkon var(--animate-time) linear reverse;
+}
+
 .hello {
   /* height: 100%; */
 }
 
 .intro {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .name-banner {
@@ -163,20 +173,22 @@ ul {
 }
 
 .deirdre-zone {
+  animation: deirdrebuttongrow var(--animate-time) linear;
   border-radius: 5%;
   width: 12rem;
+  height: 6rem;
   font-size: 2rem;
 }
 
 .more {
   width: 12rem;
   height: 2.5rem;
-  margin-left: 10%;
+  /* margin-left: 10%; */
 }
 
 .more-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
 }
@@ -447,4 +459,64 @@ ul {
   bottom: 0.1rem;;
   left: 0.5rem;
   font-size: 0.75rem;
+}
+
+/* animations */
+
+@keyframes blinkon {
+  from {
+    width: 0;
+    height: 0;
+  }
+
+  to {
+    width: 80%;
+    height: 85%;
+  }
+}
+
+@keyframes blinkoff {
+  from {
+    width: 80%;
+    height: 85%;
+  }
+
+  to {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes flydown {
+  from {
+    transform: translate(-50%, -50%);
+  }
+
+  to {
+    transform: translate(-50%, 100%);
+  }
+}
+
+@keyframes h1grow {
+  from {
+    font-size: 0
+  }
+
+  to {
+    font-size: 16rem;
+  }
+}
+
+@keyframes deirdrebuttongrow {
+  from {
+    width: 0rem;
+    height: 0rem;
+    font-size: 0rem;
+  }
+
+  to {
+    width: 12rem;
+    height: 6rem;
+    font-size: 2rem;
+  }
 }
