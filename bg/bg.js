@@ -105,11 +105,38 @@ const animationManager = {
   const scene3 = new THREE.Scene();
   const camera3 = new THREE.PerspectiveCamera( 75, window.innerWidth /
                                               window.innerHeight, 0.1, 1000 );
-  camera2.position.set(0, 0, 100);
+  camera3.position.set(0, 0, 100);
 
   const smallBox3 = new THREE.BoxGeometry(30, 20, 20);
   const largeBox3 = new THREE.BoxGeometry(60, 30, 30);
 
+  const blueMat3 = new THREE.MeshBasicMaterial( {color: 0x4808FD, wireframe: true})
+  const pinkMat3 = new THREE.MeshBasicMaterial( {color: 0xFF00DC, wireframe: true})
+
+  let leftArray = [];
+  let midArray = [];
+  let rightArray = [];
+  let bigBox = false;
+  for (let i = 0; i < 30; i++) {
+    let box;
+    if (bigBox) {
+      box = new THREE.Mesh(largeBox3, pinkMat3);
+    } else {
+      box = new THREE.Mesh(smallBox3, blueMat3);
+    }
+    scene3.add(box);
+    if (i < 10) {
+      leftArray.push(box);
+      box.position.set(-100, 100 - (i * 20), 0);
+    } else if (i >= 10 && i < 20) {
+      midArray.push(box);
+      box.position.set(0, 100 - ((i - 10) * 20), 0);
+    } else if (i >= 20) {
+      rightArray.push(box);
+      box.position.set(100, 100 - ((i - 20) * 20), 0);
+    }
+    bigBox = !bigBox;
+  }
 
   function animate() {
     requestAnimationFrame(animate);
@@ -172,6 +199,24 @@ const animationManager = {
       renderer.render(scene2, camera2);
 
     } else if (animationManager.counter === 3) {
+      for (let box of leftArray) {
+        box.position.y -= 0.5;
+        if (box.position.y < -120) {
+          box.position.y = 120;
+        }
+      }
+      for (let box of midArray) {
+        box.position.y += 0.5;
+        if (box.position.y > 120) {
+          box.position.y = -120;
+        }
+      }
+      for (let box of rightArray) {
+        box.position.y -= 0.5;
+        if (box.position.y < -120) {
+          box.position.y = 120;
+        }
+      }
 
       renderer.render(scene3, camera3);
     }
