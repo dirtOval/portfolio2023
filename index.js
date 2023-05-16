@@ -1,6 +1,8 @@
 import * as $ from 'jquery';
 
-let counter = 0
+let slideCounter = 0;
+let projectCounter = 0;
+
 const slides = [
   '.hello',
   '.intro',
@@ -71,13 +73,21 @@ const projects  = [
 ]
 
 let updatePage = () => {
-  $(slides[counter]).toggleClass('active');
-  counter += 1;
-  if (counter > 4) {
-    counter = 0;
+  $(slides[slideCounter]).toggleClass('active');
+  slideCounter += 1;
+  if (slideCounter > 4) {
+    slideCounter = 0;
   }
-  $(slides[counter]).toggleClass('active');
-  // console.log(`counter is ${counter}`);
+  $(slides[slideCounter]).toggleClass('active');
+  // console.log(`slideCounter is ${slideCounter}`);
+}
+
+let updateProject = () => {
+  $('.project-image').attr('src', projects[projectCounter].image);
+  $('.project-title').text(projects[projectCounter].title)
+  $('.project-title a').attr('href', projects[projectCounter].link);
+  $('.project-description').text(projects[projectCounter].description);
+  $('.project-commentary').text(projects[projectCounter].commentary);
 }
 
 const langTan = Math.tan(Math.PI/languages.length);
@@ -88,9 +98,27 @@ const miscTan = Math.tan(Math.PI/misc.length);
 const gamesTan = Math.tan(Math.PI/games.length);
 
 $(document).ready(function() {
+  updateProject();
 
   $('.button').click(() => {
     updatePage();
+  })
+
+  $('.right').click(() => {
+    projectCounter += 1;
+    if (projectCounter >= projects.length) {
+      projectCounter = 0;
+    }
+    updateProject();
+  })
+
+
+  $('.left').click(() => {
+    projectCounter -= 1;
+    if (projectCounter < 0) {
+      projectCounter = projects.length - 1;
+    }
+    updateProject();
   })
 
   let $techList = $('.tech-list');
