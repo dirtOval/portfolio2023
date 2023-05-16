@@ -48,6 +48,28 @@ const games = ['images/phaser.png',
                'images/colyseus.jpg',
                'images/unity.png'];
 
+const projects  = [
+  {
+    title: 'Cool Project',
+    image: 'images/mike.jpg',
+    description: 'a very cool project',
+    link: '#',
+    commentary: `A very serious project about serious things. I
+    worked on this project for months, toiling tirelessly and
+    eating nothing but lettuce and hot sauce packets. This project
+    will change the world.`
+  },
+  {
+    title: 'Another Cool Project',
+    image: 'images/mike.jpg',
+    description: 'another very cool project',
+    link: '#',
+    commentary: `Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project`
+  }
+]
+
 let updatePage = () => {
   $(slides[counter]).toggleClass('active');
   counter += 1;
