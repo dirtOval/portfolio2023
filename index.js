@@ -69,6 +69,42 @@ const projects  = [
     commentary: `Another very serious project for serious people.
     I spent so much time on this project and now it is perfect. beautiful.
     transcendent. amazing. i lvoe this project`
+  },
+  {
+    title: 'The very coolest project',
+    image: 'images/mike.jpg',
+    description: 'this project is so cool',
+    link: '#',
+    commentary: `Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project
+    Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project
+    Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project
+    Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project
+    Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project
+    Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project
+    Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project
+    Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project
+    Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project
+    Another very serious project for serious people.
+    I spent so much time on this project and now it is perfect. beautiful.
+    transcendent. amazing. i lvoe this project`
   }
 ]
 
@@ -84,7 +120,7 @@ let updatePage = () => {
 
 let updateProject = () => {
   $('.project-image').attr('src', projects[projectCounter].image);
-  $('.project-title').text(projects[projectCounter].title)
+  $('.project-title a').text(projects[projectCounter].title)
   $('.project-title a').attr('href', projects[projectCounter].link);
   $('.project-description').text(projects[projectCounter].description);
   $('.project-commentary').text(projects[projectCounter].commentary);
