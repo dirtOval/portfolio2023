@@ -1,5 +1,5 @@
 body {
-  background: darkblue;
+  /* background: black; */
   color: white;
   text-align: center;
   font-family: sans-serif;
@@ -44,12 +44,17 @@ ul {
 
 /* sections */
 
+#three {
+  width: 100%;
+  height: 100%;
+}
+
 
 .slide {
   animation: blinkon var(--animate-time) linear;
   position: absolute;
   display: none;
-  /* border-radius: 5%; */
+  border-radius: 3%;
   width: 80%;
   height: 90%;
   flex-direction: column;
@@ -58,7 +63,7 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid white;
+  /* border: 1px solid white; */
   background: rgba(0, 0, 0, 0.75)
 
 }
@@ -190,6 +195,8 @@ ul {
 }
 
 .projects-button {
+  position: absolute;
+  bottom: 0.75rem;
   width: 10rem;
   height: 2.5rem;
   display: flex;

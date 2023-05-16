@@ -1,4 +1,8 @@
 import * as $ from 'jquery';
+import animationManager from './bg/bg.js';
+
+animationManager.init();
+
 
 let slideCounter = 0;
 let projectCounter = 0;
@@ -142,6 +146,7 @@ $(document).ready(function() {
     slide.on('animationend', () => {
       slide.off('animationend');
       slide.css('animation', 'blinkon 0.65s linear');
+      animationManager.updateCounter();
       updatePage();
     })
   })
@@ -361,6 +366,8 @@ $(document).ready(function() {
   $gamesNode.on('mouseleave', () => {
     $gamesLi.css('color', '');
   })
+
+
 
   // $langNode.on('animationend', () => {
   // })
