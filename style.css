@@ -11,7 +11,7 @@ body {
 /* headers & fonts*/
 
 h1 {
-  animation: h1grow var(--animate-time) linear;
+  /* animation: h1grow var(--animate-time) linear; */
   font-size: 16rem;
 }
 
@@ -51,7 +51,7 @@ ul {
   display: none;
   /* border-radius: 5%; */
   width: 80%;
-  height: 85%;
+  height: 90%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -65,10 +65,6 @@ ul {
 
 .active {
   display: flex;
-}
-
-.closing {
-  animation: blinkon var(--animate-time) linear reverse;
 }
 
 .hello {
@@ -135,15 +131,15 @@ ul {
 .tech-section {
   /* border: 1px solid green; */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .tech-list {
   margin-top: 2rem;
   /* display: flex; */
   /* justify-content: space-around; */
-  /* align-items: center; */
-  /* flex-wrap: wrap; */
+  align-items: center;
+  justify-items: start;
   display: grid;
   grid-template-columns: .33fr .33fr .33fr;
   grid-template-rows: 1fr 1fr;
@@ -173,7 +169,7 @@ ul {
 }
 
 .deirdre-zone {
-  animation: deirdrebuttongrow var(--animate-time) linear;
+  /* animation: deirdrebuttongrow var(--animate-time) linear; */
   border-radius: 5%;
   width: 12rem;
   height: 6rem;
@@ -240,9 +236,14 @@ ul {
 
 .group {
   /* border: 1px solid blue; */
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+.group ul {
+  margin-left: 1rem;
 }
 
 .lang-node {
@@ -301,6 +302,7 @@ ul {
 
 .bubble {
   /* border: 1px solid green; */
+  font-size: 0.75rem;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
@@ -309,6 +311,7 @@ ul {
   justify-content: center;
   background-color: green;
   z-index: 2;
+
 }
 
 .icon {
@@ -465,25 +468,15 @@ ul {
 
 @keyframes blinkon {
   from {
-    width: 0;
-    height: 0;
+    transform: scaleX(0)
+               scaleY(0)
+               translate(-50%, -50%);
   }
 
   to {
-    width: 80%;
-    height: 85%;
-  }
-}
-
-@keyframes blinkoff {
-  from {
-    width: 80%;
-    height: 85%;
-  }
-
-  to {
-    width: 0;
-    height: 0;
+    transform: scaleX(1)
+               scaleY(1)
+               translate(-50%, -50%);
   }
 }
 
@@ -494,29 +487,5 @@ ul {
 
   to {
     transform: translate(-50%, 100%);
-  }
-}
-
-@keyframes h1grow {
-  from {
-    font-size: 0
-  }
-
-  to {
-    font-size: 16rem;
-  }
-}
-
-@keyframes deirdrebuttongrow {
-  from {
-    width: 0rem;
-    height: 0rem;
-    font-size: 0rem;
-  }
-
-  to {
-    width: 12rem;
-    height: 6rem;
-    font-size: 2rem;
   }
 }
