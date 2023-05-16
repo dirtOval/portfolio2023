@@ -47,13 +47,15 @@ const animationManager = {
                                               window.innerHeight, 0.1, 1000 );
 
   const plane1 = new THREE.PlaneGeometry( 26, 26);
-  const bgMaterial1 = new THREE.MeshBasicMaterial( { color: 0xA600FF})
+  // const bgMaterial1 = new THREE.MeshBasicMaterial( { color: 0xA600FF})
+  const bgMaterial1 = new THREE.MeshBasicMaterial( { color: 0x000})
+
 
   const bg1 = new THREE.Mesh(plane1, bgMaterial1);
   scene1.add(bg1);
 
   const geometry1 = new THREE.BoxGeometry(0.5, 0.5, 0.5);
-  const material1 = new THREE.MeshBasicMaterial( { color: 0x00ff00 });
+  const material1 = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true });
   material1.transparent = true;
 
   let cubeArray1 = [];
@@ -72,6 +74,41 @@ const animationManager = {
 
   let cubeOpacity = 1;
   let opacitySwitch = false;
+
+  //SCENE 2
+  const scene2 = new THREE.Scene();
+  const camera2 = new THREE.PerspectiveCamera( 75, window.innerWidth /
+                                              window.innerHeight, 0.1, 1000 );
+  camera2.position.set(0, 0, 100);
+
+  const cone2 = new THREE.ConeGeometry(40, 100, 4);
+  const teethMaterial = new THREE.MeshBasicMaterial( { color: 0x5D527C, wireframe: true});
+
+  let topTooth = false;
+  let topArray = [];
+  let bottomArray = [];
+  for (let i = 0; i < 32; i++) {
+    const tooth = new THREE.Mesh(cone2, teethMaterial);
+    scene2.add(tooth);
+    tooth.rotation.set(90, 0, 0);
+    if (topTooth) {
+      tooth.position.set(-160 + (i * 10), 60, 0);
+      topArray.push(tooth);
+    } else {
+      tooth.position.set(-160 + (i * 10), -60, 0);
+      bottomArray.push(tooth);
+    }
+    topTooth = !topTooth;
+  }
+
+  //SCENE 3
+  const scene3 = new THREE.Scene();
+  const camera3 = new THREE.PerspectiveCamera( 75, window.innerWidth /
+                                              window.innerHeight, 0.1, 1000 );
+  camera2.position.set(0, 0, 100);
+
+  const smallBox3 = new THREE.BoxGeometry(30, 20, 20);
+  const largeBox3 = new THREE.BoxGeometry(60, 30, 30);
 
 
   function animate() {
@@ -124,6 +161,19 @@ const animationManager = {
       }
 
       renderer.render(scene1, camera1);
+
+    } else if (animationManager.counter === 2) {
+      for (let tooth of topArray) {
+        tooth.rotation.y += 0.05;
+      }
+      for (let tooth of bottomArray) {
+        tooth.rotation.y -= 0.05;
+      }
+      renderer.render(scene2, camera2);
+
+    } else if (animationManager.counter === 3) {
+
+      renderer.render(scene3, camera3);
     }
   }
   animate();
