@@ -138,6 +138,29 @@ const animationManager = {
     bigBox = !bigBox;
   }
 
+  //SCENE 4
+  const scene4 = new THREE.Scene();
+  const camera4 = new THREE.PerspectiveCamera( 75, window.innerWidth /
+                                              window.innerHeight, 0.1, 1000 );
+  camera4.position.set(0, 0, 25);
+
+  const smallSphere4 = new THREE.SphereGeometry(15, 32, 16);
+  const medSphere4 = new THREE.SphereGeometry(30, 32, 16);
+  const bigSphere4 = new THREE.SphereGeometry(45, 32, 16);
+
+  const cyanMat4 = new THREE.MeshBasicMaterial( {color: 0x03fcfc, wireframe: true});
+  const blueMat4 = new THREE.MeshBasicMaterial( {color: 0x4103fc, wireframe: true});
+  const mintMat4 = new THREE.MeshBasicMaterial( {color: 0x03fc9d, wireframe: true});
+
+  const smMesh4 = new THREE.Mesh(smallSphere4, cyanMat4);
+  const medMesh4 = new THREE.Mesh(medSphere4, blueMat4);
+  const bigMesh4 = new THREE.Mesh(bigSphere4, mintMat4);
+
+  scene4.add(smMesh4);
+  scene4.add(medMesh4);
+  scene4.add(bigMesh4);
+
+
   function animate() {
     requestAnimationFrame(animate);
 
@@ -219,6 +242,14 @@ const animationManager = {
       }
 
       renderer.render(scene3, camera3);
+
+    } else if (animationManager.counter === 4) {
+
+      smMesh4.rotation.y += 0.025;
+      medMesh4.rotation.y -= 0.02;
+      bigMesh4.rotation.y += 0.015;
+
+      renderer.render(scene4, camera4);
     }
   }
   animate();

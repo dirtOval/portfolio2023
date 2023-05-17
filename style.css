@@ -62,6 +62,7 @@ ul {
   justify-content: center;
   top: 50%;
   left: 50%;
+  transform-origin: top left;
   transform: translate(-50%, -50%);
   /* border: 1px solid white; */
   background: rgba(0, 0, 0, 0.75)
@@ -476,14 +477,12 @@ ul {
 
 @keyframes blinkon {
   from {
-    transform: scaleX(0)
-               scaleY(0)
+    transform: scale(0)
                translate(-50%, -50%);
   }
 
   to {
-    transform: scaleX(1)
-               scaleY(1)
+    transform: scale(1)
                translate(-50%, -50%);
   }
 }
