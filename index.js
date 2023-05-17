@@ -64,7 +64,7 @@ const projects  = [
   },
   {
     title: 'SocketShooter',
-    image: '',
+    image: 'images/socketShooter.gif',
     description: 'A WIP multiplayer platformer shooter made in 3 days',
     link: 'https://github.com/dirtOval/SocketShooter',
     commentary: 'I made a game!'
