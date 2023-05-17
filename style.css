@@ -474,11 +474,15 @@ a:hover {
 }
 
 .scroll-container {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 
   overflow-y: auto;
   height: 60%;
   /* border: 1px solid magenta; */
+}
+
+.project-commentary {
+  padding-right: 0.5rem;
 }
 
 /* Contact Page */

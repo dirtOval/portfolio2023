@@ -58,16 +58,73 @@ const projects  = [
   {
     title: 'The Thor Store',
     image: 'images/thor-store.gif',
-    description: 'The front-end of an online clothing store.',
+    description: 'The front-end of an online clothing store. Worked on a team with two other engineers.',
     link: 'https://github.com/RFE-2212-FEC-Thor/FEC-Thor',
-    commentary: 'I made the product overview section!'
+    commentary: `
+    The project came together over a few weeks January - February 2022.
+    <br><br>
+    We used React with TypeScript, with an Express proxy to talk to the API serving the clothing data. I'd
+    dabbled in TypeScript before, but this was my first time using it for a real project. Because I was the most
+    excited about using TypeScript, it fell to me to set up the repo. Our original plan was to use Create-React-App's
+    TypeScript template, but we were warned doing so would make deploying more annoying later, so I ended up learning
+    how to make Webpack, React, and TypeScript work together. Not sure how much easier it made deploying, but I definitely
+    learned a lot about Webpack in the process. :)
+    <br><br>
+    Another first for me, we used SCSS. At first we were working in one big stylesheet, which turned into 3 little
+    ones feeing into a main file after we swiftly plunged into merge conflict hell. Gotta say, I looove SCSS. The nesting
+    alone makes it totally worth it, and being able to set up simple loops is a big time-saver. I thought really hard about
+    using SCSS for this site, but then I forgot. Next time!
+    <br><br>
+    My other major contribution to the project was the Product Overview component, pictured on the left. As aforementioned,
+    all of the product data was coming from Axios calls to an API. Setting up TypeScript interfaces for each component's props
+    was tedious, but ultimately a huge time-saver, as far as preventing the sort of bugs that result from thinking data
+    is one type when it's actually another.
+    <br><br>
+    This was an enjoyable project for me. I love working on the front-end, especially where animations and transitions are
+    concerned. A lot of the work was more functional, but there were plenty of little details, tiny onmouseover
+    effects and such. The most interesting and fun part of the project was the image gallery. There's a cute animation that
+    plays when the gallery goes into expanded mode, and the zoom view was an interesting challenge that got me whiteboarding
+    to solve. 10/10, would Thor Store again.
+    <br><br><br><br>
+    `
   },
   {
     title: 'SocketShooter',
     image: 'images/socketShooter.gif',
-    description: 'A WIP multiplayer platformer shooter made in 3 days',
+    description: 'WIP multiplayer platformer shooter made in 3 days.',
     link: 'https://github.com/dirtOval/SocketShooter',
-    commentary: 'I made a game!'
+    commentary: `
+    This project was a huge learning experience. I'd messed around in Unity & Godot before, but never before had I made
+    a game without an editor, much less a multiplayer game. I used Phaser 3 for the gameplay, Colyseus for the game server,
+    and React for the main menu. That last one was a weird choice, one that resulted in some difficulties in development. If
+    I was to do it again, I would definitely have just made an in-game menu in Phaser. Live and learn I guess.
+    <br><br>
+    The basic gameplay is all there, currently. You can run around and jump and shoot each other, and there's a
+    simple game lobby in the main menu. I tested it with 16 players at once hosted on an EC2 Micro and it worked just fine,
+    minor bugs & spotty hitboxes aside.
+    <br><br>
+    The real problem with the game at the moment is, I found out 2 days into development
+    that the physics engine I was using, Phaser's built in Arcade engine, only works on the browser. This would be fine
+    if I was making a singleplayer game, but in a multiplayer game the player's X and Y coordinates need to live on the
+    server so it can tell all clients where each player is using websockets. SO, as it is the server tracks the player's X
+    coordinate and whether or not they are jumping. When a player jumps, the client messages the server to set
+    the boolean value isJumping to true, which then in turn notifies each other client that the player in question is
+    jumping. When the player lands, it tells the server, which tells every other client. As you might guess, this can
+    cause some pretty significant sync issues due to lag.
+    <br><br>
+    I plan to address this by revising the game to instead use Matter.js for its physics, which can run in Node. Another
+    item on the list is to get someone to do some graphics for the game, as it currently uses free assets by artists
+    Master484 and Nexust on opengameart.org. Finally, I definitely want to redo the main menu to be in game.
+    <br><br>
+    The aforementioned difficulties with the main menu had to do with how Phaser interacts with its surrounding environment.
+    More specifically, how it really doesn't do that at all. When it came time to set up the game lobby, I needed a way to
+    pass a session ID from React state into Phaser. Unfortunately, the only entrypoint into Phaser is its config file at initialization.
+    So what I ended up doing was going through the Phaser docs (which are, by the way, kind of bad) looking for a property on the config
+    that I could pass a string into that wouldn't harm anything. What I ended up settling on was the gameTitle property, which just
+    displayed in the console upon init, and which was accessible from the main Game object from within Phaser. Tomfoolery, to be sure.
+    <br><br><br><br>
+
+    `
   },
   {
     title: 'The Thor Store Ratings & Reviews API',
@@ -154,7 +211,7 @@ let updateProject = () => {
   $('.project-title a').text(projects[projectCounter].title)
   $('.project-title a').attr('href', projects[projectCounter].link);
   $('.project-description').text(projects[projectCounter].description);
-  $('.project-commentary').text(projects[projectCounter].commentary);
+  $('.project-commentary').html(projects[projectCounter].commentary);
 }
 
 const langTan = Math.tan(Math.PI/languages.length);
