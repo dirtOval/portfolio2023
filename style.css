@@ -42,8 +42,13 @@ li {
   list-style-type: none;
 }
 
-ul {
-  /* border: 1px solid white; */
+a {
+  color: #0814fd;
+  transition: color 0.25s linear;
+}
+
+a:hover {
+  color: #fd08dc;
 }
 
 /* sections */
@@ -327,7 +332,14 @@ ul {
   background-color: #5D527C;
   /* color: rgb(0, 0, 0); */
   z-index: 2;
+  transition: background-color 0.5s linear,
+              font-size 0.5s linear,
+              box;
+}
 
+.bubble:hover {
+  background-color: #4c4466;
+  font-size: 0.85rem;
 }
 
 .icon {
