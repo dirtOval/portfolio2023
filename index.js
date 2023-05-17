@@ -139,61 +139,6 @@ const projects  = [
     description: 'A simple web app for texting people',
     commentary: 'Uhhhhhhhhhhhhhhhhhhhhh'
   }
-  // {
-  //   title: 'Cool Project',
-  //   image: 'images/mike.jpg',
-  //   description: 'a very cool project',
-  //   link: '#',
-  //   commentary: `A very serious project about serious things. I
-  //   worked on this project for months, toiling tirelessly and
-  //   eating nothing but lettuce and hot sauce packets. This project
-  //   will change the world.`
-  // },
-  // {
-  //   title: 'Another Cool Project',
-  //   image: 'images/mike.jpg',
-  //   description: 'another very cool project',
-  //   link: '#',
-  //   commentary: `Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project`
-  // },
-  // {
-  //   title: 'The very coolest project',
-  //   image: 'images/mike.jpg',
-  //   description: 'this project is so cool',
-  //   link: '#',
-  //   commentary: `Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project
-  //   Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project
-  //   Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project
-  //   Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project
-  //   Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project
-  //   Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project
-  //   Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project
-  //   Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project
-  //   Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project
-  //   Another very serious project for serious people.
-  //   I spent so much time on this project and now it is perfect. beautiful.
-  //   transcendent. amazing. i lvoe this project`
-  // }
 ]
 
 let updatePage = () => {
@@ -211,6 +156,8 @@ let updateProject = () => {
   $('.project-title a').text(projects[projectCounter].title)
   $('.project-title a').attr('href', projects[projectCounter].link);
   $('.project-description').text(projects[projectCounter].description);
+  $('.scroll-container')[0].scrollTo(0, 0);
+
   $('.project-commentary').html(projects[projectCounter].commentary);
 }
 
