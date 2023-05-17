@@ -129,9 +129,44 @@ const projects  = [
   {
     title: 'The Thor Store Ratings & Reviews API',
     image: 'images/sdc2.png',
-    description: 'An API serving the ratings & reviews section of an online clothing store',
+    description: 'An API serving the ratings & reviews section of an online clothing store.',
     link: 'https://github.com/dirtOval/rfe2212-system-design-capstone',
-    commentary: 'Yah i need to explain myself here i think'
+    commentary: `
+    Worked on this one right after the front-end of The Thor Store, sometime mid February 2023.
+    <br><br>
+    So as I mentioned in The Thor Store description, all the data populating the front-end came from
+    an API. The task with this project was to, along with two other engineers, decompose the API into
+    smaller services in order to handle larger, more frequent traffic. I was tasked with handling the
+    service covering the Ratings & Reviews component.
+    <br><br>
+    The first thing to do was decide how I was going to store the data. I researched a variety of database options before
+    settling on MongoDB. Its document-based structure made sense given the nested nature of the data to be stored, and
+    research suggested it was highly available and would scale well horizontally.
+    <br><br>
+    From there, I wrote a Python script to ETL the millions of lines of CSV into the DB. This turned out to be quite the
+    arduous process. The main issue arose from the absurd memory consumption involved in attempting to open multiple
+    millions-of-lines-long CSV files at once and package their contents into objects. I got around it by using the Pandas
+    library's CSV chunking functionality, turning the CSVs into bite-sized pieces an EC2 Micro could handle without immediately choking.
+    <br><br>
+    Writing the actual API functionality wasn't so bad. I used an Express server to feed requests into the appropriate
+    controller, trying my best to adhere to the MVC model. Most of the routes were pretty simple and lightweight, but I
+    ran into an interesting conundrum when attempting to write the metadata route. Specifically, whether to generate and
+    store the metadata, or simply generate it as needed.
+    <br><br>
+    Reasoning that it would somehow be more annoying to update the metadata every time a review was added, I elected to generate
+    it as needed. Naturally, my initial implementation ran horrifically slow. Like, 9 seconds per request slow. I added
+    some indexes and made use of Mongoose's aggregate functionality, which brought it within the requirement that each
+    request take no longer than 50ms, but it was at that point I realized my mistake.
+    <br><br>
+    While storing the data seemed like it would take more work than generating it on the fly, that would work would all
+    happen on the back-end, and would not affect the user experience at all. Generating on the fly, on the other hand,
+    resulted in slightly slower load times for the front-end, which was no good. Oops!
+    <br><br>
+    This project was pretty frustrating at times, but ultimately a big learning experience. I hadn't previously
+    dealt with such large sets of data, and had only really dabbled in Mongo at that point. If I were to do it again
+    I'd do everything 10x faster and less foolishly. That's how it goes, I guess!
+    <br><br><br><br><br><br><br><br>
+    `
   },
   {
     title: 'BoatworksSMS',
