@@ -56,60 +56,87 @@ const games = ['images/phaser.png',
 
 const projects  = [
   {
-    title: 'Cool Project',
-    image: 'images/mike.jpg',
-    description: 'a very cool project',
-    link: '#',
-    commentary: `A very serious project about serious things. I
-    worked on this project for months, toiling tirelessly and
-    eating nothing but lettuce and hot sauce packets. This project
-    will change the world.`
+    title: 'The Thor Store',
+    image: 'images/thor-store.gif',
+    description: 'The front-end of an online clothing store.',
+    link: 'https://github.com/RFE-2212-FEC-Thor/FEC-Thor',
+    commentary: 'I made the product overview section!'
   },
   {
-    title: 'Another Cool Project',
-    image: 'images/mike.jpg',
-    description: 'another very cool project',
-    link: '#',
-    commentary: `Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project`
+    title: 'SocketShooter',
+    image: '',
+    description: 'A WIP multiplayer platformer shooter made in 3 days',
+    link: 'https://github.com/dirtOval/SocketShooter',
+    commentary: 'I made a game!'
   },
   {
-    title: 'The very coolest project',
-    image: 'images/mike.jpg',
-    description: 'this project is so cool',
-    link: '#',
-    commentary: `Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project
-    Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project
-    Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project
-    Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project
-    Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project
-    Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project
-    Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project
-    Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project
-    Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project
-    Another very serious project for serious people.
-    I spent so much time on this project and now it is perfect. beautiful.
-    transcendent. amazing. i lvoe this project`
+    title: 'The Thor Store Ratings & Reviews API',
+    image: 'images/sdc2.png',
+    description: 'An API serving the ratings & reviews section of an online clothing store',
+    link: 'https://github.com/dirtOval/rfe2212-system-design-capstone',
+    commentary: 'Yah i need to explain myself here i think'
+  },
+  {
+    title: 'BoatworksSMS',
+    image: 'images/boatworks.png',
+    description: 'A simple web app for texting people',
+    commentary: 'Uhhhhhhhhhhhhhhhhhhhhh'
   }
+  // {
+  //   title: 'Cool Project',
+  //   image: 'images/mike.jpg',
+  //   description: 'a very cool project',
+  //   link: '#',
+  //   commentary: `A very serious project about serious things. I
+  //   worked on this project for months, toiling tirelessly and
+  //   eating nothing but lettuce and hot sauce packets. This project
+  //   will change the world.`
+  // },
+  // {
+  //   title: 'Another Cool Project',
+  //   image: 'images/mike.jpg',
+  //   description: 'another very cool project',
+  //   link: '#',
+  //   commentary: `Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project`
+  // },
+  // {
+  //   title: 'The very coolest project',
+  //   image: 'images/mike.jpg',
+  //   description: 'this project is so cool',
+  //   link: '#',
+  //   commentary: `Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project
+  //   Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project
+  //   Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project
+  //   Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project
+  //   Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project
+  //   Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project
+  //   Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project
+  //   Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project
+  //   Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project
+  //   Another very serious project for serious people.
+  //   I spent so much time on this project and now it is perfect. beautiful.
+  //   transcendent. amazing. i lvoe this project`
+  // }
 ]
 
 let updatePage = () => {
