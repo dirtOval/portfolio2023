@@ -166,7 +166,7 @@ const projects  = [
     This project was pretty frustrating at times, but ultimately a big learning experience. I hadn't previously
     dealt with such large sets of data, and had only really dabbled in Mongo at that point. If I were to do it again
     I'd do everything 10x faster and less foolishly. That's how it goes, I guess!
-    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     `
   },
   {
@@ -210,7 +210,7 @@ const projects  = [
     <br><br>
     I definitely want to do another thing with Twilio SMS someday, whether for work or my own insidious purposes. It is an
     insanely fun service, and costs fractions of a cent per message. Definitely recommend it if you've never played with it.
-    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     `
   }
 ]
