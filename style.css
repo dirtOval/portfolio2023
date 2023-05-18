@@ -6,7 +6,7 @@ body {
   background: black;
   color: white;
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   overflow: hidden;
 
   --animate-time: 0.5s;
