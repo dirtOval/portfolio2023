@@ -242,8 +242,15 @@ const miscTan = Math.tan(Math.PI/misc.length);
 const gamesTan = Math.tan(Math.PI/games.length);
 
 //need this to change font size between OSs
-if (navigator.userAgent.indexOf("Win") != -1) {
+if (navigator.userAgent.includes("Win")) {
+  console.log('windows detected! :)');
   $('html').css('font-size', '16px');
+  $('h1').css('font-size', '19rem');
+  $('h2').css('font-size', '4.5rem');
+  $('p').css('font-size', '1.25rem');
+  $('body').css('--bubble-radius', '5.5rem');
+} else {
+  console.log('yay for no windows OS!');
 }
 
 $(document).ready(function() {

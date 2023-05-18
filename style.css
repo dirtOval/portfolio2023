@@ -10,6 +10,7 @@ body {
   overflow: hidden;
 
   --animate-time: 0.5s;
+  --bubble-radius: 5rem;
 }
 
 /* headers & fonts*/
@@ -19,7 +20,6 @@ h1, h2, h3, h4, p, li, div {
 }
 
 h1 {
-  /* animation: h1grow var(--animate-time) linear; */
   font-size: 16rem;
 }
 
@@ -327,8 +327,8 @@ a:hover {
 .bubble {
   /* border: 1px solid green; */
   font-size: 0.75rem;
-  width: 5rem;
-  height: 5rem;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
   border-radius: 50%;
   display: flex;
   align-items: center;
