@@ -325,12 +325,14 @@ a:hover {
 }
 
 .bubble {
+  display: none;
+  animation: bubble-grow 0.25s linear;
   /* border: 1px solid green; */
   font-size: 0.75rem;
   width: var(--bubble-radius);
   height: var(--bubble-radius);
   border-radius: 50%;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
   background-color: #5D527C;
@@ -348,14 +350,16 @@ a:hover {
 
 .icon {
   /* animation: 0.5s ease-in alternate popout; */
+  opacity: 0;
   width: 2rem;
   height: 2rem;
   position: absolute;
-  /* display: none; */
-  transition: transform 0.5s ease-in;
+  display: none;
+  transition: transform 0.5s ease-in, opacity 0.45s ease-in;
 }
 
 .lang-node:hover .lang {
+  opacity: 1;
   display: inline;
   /* top: 50%; */
   /* left: 50%; */
@@ -365,6 +369,7 @@ a:hover {
 }
 
 .front-node:hover .front {
+  opacity: 1;
   display: inline;
   /* top: 50%; */
   /* left: 50%; */
@@ -374,6 +379,7 @@ a:hover {
 }
 
 .back-node:hover .back {
+  opacity: 1;
   display: inline;
   /* top: 50%; */
   /* left: 50%; */
@@ -383,6 +389,7 @@ a:hover {
 }
 
 .test-node:hover .test {
+  opacity: 1;
   display: inline;
   /* top: 50%; */
   /* left: 50%; */
@@ -392,6 +399,7 @@ a:hover {
 }
 
 .misc-node:hover .misc {
+  opacity: 1;
   display: inline;
   /* top: 50%; */
   /* left: 50%; */
@@ -401,6 +409,7 @@ a:hover {
 }
 
 .games-node:hover .game {
+  opacity: 1;
   display: inline;
   /* top: 50%; */
   /* left: 50%; */
@@ -526,5 +535,15 @@ a:hover {
 
   to {
     transform: translate(-50%, 100%);
+  }
+}
+
+@keyframes bubble-grow {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
   }
 }

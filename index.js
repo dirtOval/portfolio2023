@@ -248,7 +248,7 @@ if (navigator.userAgent.includes("Win")) {
   $('h1').css('font-size', '19rem');
   $('h2').css('font-size', '4.5rem');
   $('p').css('font-size', '1.25rem');
-  $('body').css('--bubble-radius', '5.5rem');
+  $('body').css('--bubble-radius', '6rem');
 } else {
   console.log('yay for no windows OS!');
 }
@@ -265,7 +265,7 @@ $(document).ready(function() {
       animationManager.updateCounter();
       updatePage();
     })
-  })
+  });
 
   $('.right').click(() => {
     projectCounter += 1;
@@ -273,7 +273,7 @@ $(document).ready(function() {
       projectCounter = 0;
     }
     updateProject();
-  })
+  });
 
 
   $('.left').click(() => {
@@ -282,7 +282,29 @@ $(document).ready(function() {
       projectCounter = projects.length - 1;
     }
     updateProject();
-  })
+  });
+
+  $('.tech-section').on('animationend', () => {
+    $('.bubble').css('display', 'flex');
+    setTimeout(() => {
+      $('.lang-node .icon').css('display', 'inline');
+    }, 250);
+    setTimeout(() => {
+      $('.front-node .icon').css('display', 'inline');
+    }, 325);
+    setTimeout(() => {
+      $('.back-node .icon').css('display', 'inline');
+    }, 525);
+    setTimeout(() => {
+      $('.test-node .icon').css('display', 'inline');
+    }, 725);
+    setTimeout(() => {
+      $('.misc-node .icon').css('display', 'inline');
+    }, 925);
+    setTimeout(() => {
+      $('.games-node .icon').css('display', 'inline');
+    }, 1125);
+  });
 
   let $techList = $('.tech-list');
 
