@@ -175,7 +175,7 @@ const projects  = [
     description: 'A simple web app utilizing Twilio\'s SMS API plugged into an SQLite database for mass messaging.',
     link: 'https://github.com/dirtOval/boatworksSMS_3.8',
     commentary: `
-    I made this between over a few weeks between March & April 2022. A Brooklyn-based education non-profit hired
+    I made this over a few weeks between March & April 2022. A Brooklyn-based education non-profit hired
     me to help enhance their alumni outreach capabilities. At the time I was working almost entirely in Python, so
     I used Django for pretty much everything: templating, routing, ORM, you name it.
     <br><br>
