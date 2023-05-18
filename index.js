@@ -71,7 +71,7 @@ const projects  = [
     learned a lot about Webpack in the process. :)
     <br><br>
     Another first for me, we used SCSS. At first we were working in one big stylesheet, which turned into 3 little
-    ones feeing into a main file after we swiftly plunged into merge conflict hell. Gotta say, I looove SCSS. The nesting
+    ones feeding into a main file after we swiftly plunged into merge conflict hell. Gotta say, I looove SCSS. The nesting
     alone makes it totally worth it, and being able to set up simple loops is a big time-saver. I thought really hard about
     using SCSS for this site, but then I forgot. Next time!
     <br><br>
@@ -85,7 +85,7 @@ const projects  = [
     effects and such. The most interesting and fun part of the project was the image gallery. There's a cute animation that
     plays when the gallery goes into expanded mode, and the zoom view was an interesting challenge that got me whiteboarding
     to solve. 10/10, would Thor Store again.
-    <br><br><br><br>
+    <br><br><br><br><br><br>
     `
   },
   {
@@ -305,6 +305,39 @@ $(document).ready(function() {
       $('.games-node .icon').css('display', 'inline');
     }, 1125);
   });
+
+
+  let commentaryExpanded = false;
+  $('.read-more').on('click', () => {
+    if (!commentaryExpanded) {
+      // $('.scroll-container').css('transform', 'scaleY(1)');
+      $('.scroll-container').css('height', '100%');
+      $('.project-title').css('font-size', '0rem');
+      $('.project-description').css('font-size', '0rem');
+
+      $('.read-more').css('font-size', '1rem');
+      $('.read-more').text('Read less!');
+    } else {
+      // $('.scroll-container').css('transform', 'scaleY(0)');
+      $('.scroll-container').css('height', '0%');
+      $('.project-title').css('font-size', '');
+      $('.project-description').css('font-size', '');
+
+      $('.project-title').css('display', '');
+      $('.project-description').css('display', '');
+
+      $('.read-more').css('font-size', '');
+      $('.read-more').text('Read more!');
+    }
+    commentaryExpanded = !commentaryExpanded;
+  })
+
+  $('.project-title').on('transitionend', () => {
+    if (commentaryExpanded) {
+      $('.project-title').css('display', 'none');
+      $('.project-description').css('display', 'none');
+    }
+  })
 
   let $techList = $('.tech-list');
 

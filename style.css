@@ -469,6 +469,11 @@ a:hover {
   /* height: auto; */
 }
 
+.project-title {
+  margin-top: 0;
+  transition: font-size 0.1s ease-out;
+}
+
 .project-info {
   width: 100%;
   height: 100%;
@@ -480,6 +485,13 @@ a:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  /* border: 1px solid green; */
+}
+
+.read-more {
+  transition: font-size 0.1s ease-out;
+  margin-left: 1rem;
+  font-size: 2.5rem;
 }
 
 .project-info h3, p {
@@ -493,15 +505,21 @@ a:hover {
 }
 
 .project-description {
+  transition: font-size 0.1s ease-out;
   padding-bottom: 0.75rem;
   border-bottom: 2px solid grey;
 }
 
+.display-description {
+  transform: scaleY(1);
+}
+
 .scroll-container {
   margin-top: 1.25rem;
-
+  transition: height 0.2s ease-out;
+  /* transform: scaleY(0); */
   overflow-y: auto;
-  height: 60%;
+  height: 0%;
   /* border: 1px solid magenta; */
 }
 
