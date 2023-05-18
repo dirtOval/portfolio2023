@@ -241,6 +241,11 @@ const testTan = Math.tan(Math.PI/testing.length);
 const miscTan = Math.tan(Math.PI/misc.length);
 const gamesTan = Math.tan(Math.PI/games.length);
 
+//need this to change font size between OSs
+if (navigator.userAgent.indexOf("Win") != -1) {
+  $('html').css('font-size', '16px');
+}
+
 $(document).ready(function() {
   updateProject();
 
