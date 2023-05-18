@@ -6,6 +6,7 @@ animationManager.init();
 
 let slideCounter = 0;
 let projectCounter = 0;
+let commentaryExpanded = false;
 
 const slides = [
   '.hello',
@@ -232,6 +233,32 @@ let updateProject = () => {
   $('.scroll-container')[0].scrollTo(0, 0);
 
   $('.project-commentary').html(projects[projectCounter].commentary);
+  commentaryExpanded = true;
+  toggleCommentary();
+}
+
+let toggleCommentary = () => {
+  if (!commentaryExpanded) {
+    // $('.scroll-container').css('transform', 'scaleY(1)');
+    $('.scroll-container').css('height', '100%');
+    $('.project-title').css('font-size', '0rem');
+    $('.project-description').css('font-size', '0rem');
+
+    $('.read-more').css('font-size', '1rem');
+    $('.read-more').text('Read less!');
+  } else {
+    // $('.scroll-container').css('transform', 'scaleY(0)');
+    $('.scroll-container').css('height', '0%');
+    $('.project-title').css('font-size', '');
+    $('.project-description').css('font-size', '');
+
+    $('.project-title').css('display', '');
+    $('.project-description').css('display', '');
+
+    $('.read-more').css('font-size', '');
+    $('.read-more').text('Read more!');
+  }
+  commentaryExpanded = !commentaryExpanded;
 }
 
 const langTan = Math.tan(Math.PI/languages.length);
@@ -306,30 +333,8 @@ $(document).ready(function() {
     }, 1125);
   });
 
-
-  let commentaryExpanded = false;
   $('.read-more').on('click', () => {
-    if (!commentaryExpanded) {
-      // $('.scroll-container').css('transform', 'scaleY(1)');
-      $('.scroll-container').css('height', '100%');
-      $('.project-title').css('font-size', '0rem');
-      $('.project-description').css('font-size', '0rem');
-
-      $('.read-more').css('font-size', '1rem');
-      $('.read-more').text('Read less!');
-    } else {
-      // $('.scroll-container').css('transform', 'scaleY(0)');
-      $('.scroll-container').css('height', '0%');
-      $('.project-title').css('font-size', '');
-      $('.project-description').css('font-size', '');
-
-      $('.project-title').css('display', '');
-      $('.project-description').css('display', '');
-
-      $('.read-more').css('font-size', '');
-      $('.read-more').text('Read more!');
-    }
-    commentaryExpanded = !commentaryExpanded;
+    toggleCommentary();
   })
 
   $('.project-title').on('transitionend', () => {

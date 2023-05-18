@@ -489,7 +489,7 @@ a:hover {
 }
 
 .read-more {
-  transition: font-size 0.1s ease-out;
+  transition: font-size 0.1s ease-out, color 0.25s linear;
   margin-left: 1rem;
   font-size: 2.5rem;
 }
