@@ -158,7 +158,7 @@ const projects  = [
     some indexes and made use of Mongoose's aggregate functionality, which brought it within the requirement that each
     request take no longer than 50ms, but it was at that point I realized my mistake.
     <br><br>
-    While storing the data seemed like it would take more work than generating it on the fly, that would work would all
+    While storing the data seemed like it would take more work than generating it on the fly, that work would all
     happen on the back-end, and would not affect the user experience at all. Generating on the fly, on the other hand,
     resulted in slightly slower load times for the front-end, which was no good. Oops!
     <br><br>
@@ -171,8 +171,46 @@ const projects  = [
   {
     title: 'BoatworksSMS',
     image: 'images/boatworks.png',
-    description: 'A simple web app for texting people',
-    commentary: 'Uhhhhhhhhhhhhhhhhhhhhh'
+    description: 'A simple web app utilizing Twilio\'s SMS API plugged into an SQLite database for mass messaging.',
+    link: 'https://github.com/dirtOval/boatworksSMS_3.8',
+    commentary: `
+    I made this between over a few weeks between March & April 2022. A Brooklyn-based education non-profit hired
+    me to help enhance their alumni outreach capabilities. At the time I was working almost entirely in Python, so
+    I used Django for pretty much everything: templating, routing, ORM, you name it.
+    <br><br>
+    Twilio's SMS API was the tool of choice for doing the actual messaging. It was pretty simple to take the Hello World
+    example on the Twilio website and plug it into Django's default SQLite database. If I was to do it again I would
+    probably have picked a different database, most likely mySQL. Anyway, in order to make mass messaging convenient I
+    added functionality allowing users to search through the database and add people to lists, these lists also being
+    stored in the database. From there it was simply a matter of selecting the desired list and pressing Send. The search
+    bar caused me to dip my toes into regular expressions, which I hadn't previously messed around with much, save copy-pasting
+    the occasional example off Stack Overflow.
+    <br><br>
+    You might notice the almost entire lack of CSS styling on the screenshot to the left. There are two main
+    reasons for this: <br>
+    1. The deadline for this project was short, and I devoted all my time to getting functionality down and bug free.<br>
+    2. I wasn't then as strong in CSS as I am today. Like, I could center a div, and I had certainly *heard* of flexbox,
+    but I lacked the breadth and depth of knowledge to make it look pretty on such a short timeline.<br>It's at the top of
+    the list if they ever hire me again, rest assured!
+    <br><br>
+    The hardest part of this project was loading the non-profit's alumni spreadsheet into the database. It should have
+    been easy. I had a library to import data via Django's admin page, and it was no trouble exporting the spreadsheet
+    in CSV form. The trouble came from the spreadsheet itself: it was inconsistent, rife with errors and duplicate
+    data, and made the whole process way more unpleasant than it had to be. Just goes to show, in practice data
+    is messy! Or it doesn't have to be, but often is. I ended up burning the better part of a day sorting through the
+    errors. If I was to do it again I definitely would write a script to fix the errors for me.
+    <br><br>
+    I really enjoyed working on this project. As a newbie dev it pushed me to learn about API calls, databases, deploying,
+    and especially error handling really quickly. The day after I deployed it I got an email saying it was
+    bugging out after trying to message only ~50 people. Given I'd designed it to message hundreds of people at once,
+    something was clearly not working right. It turned out someone had replied STOP to an earlier message the non-profit
+    had sent out, and I hadn't written any logic to handle that. One very apologetic email and about half a dozen lines of
+    code later, and it was working like a charm.
+    <br><br>
+    I definitely want to do another thing with Twilio SMS someday, whether for work or my own insidious purposes. It is an
+    insanely fun service, and costs fractions of a cent per message. Definitely recommend it if you've never played with it.
+    <br><br><br><br><br><br><br><br><br><br><br>
+    `
   }
 ]
 
