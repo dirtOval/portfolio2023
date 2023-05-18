@@ -422,7 +422,7 @@ $(document).ready(function() {
   $backNode.append($backBubble);
   let $testBubble = $('<div class="bubble test-bubble">Test/Deploy</div>');
   $testNode.append($testBubble);
-  let $miscBubble = $('<div class="bubble misc-bubble">DevTools/Misc</div>');
+  let $miscBubble = $('<div class="bubble misc-bubble">DevTools/\nMisc</div>');
   $miscNode.append($miscBubble);
   let $gamesBubble = $('<div class="bubble games-bubble">Games</div>');
   $gamesNode.append($gamesBubble);

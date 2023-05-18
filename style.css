@@ -339,7 +339,7 @@ a:hover {
   display: none;
   animation: bubble-grow 0.25s linear;
   /* border: 1px solid green; */
-  font-size: 0.75rem;
+  font-size: 0.90rem;
   width: var(--bubble-radius);
   height: var(--bubble-radius);
   border-radius: 50%;
@@ -356,7 +356,7 @@ a:hover {
 
 .bubble:hover {
   background-color: #4c4466;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .icon {
