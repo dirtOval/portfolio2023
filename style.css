@@ -6,7 +6,7 @@ body {
   background: black;
   color: white;
   text-align: center;
-  font-family: Arial;
+  /* font-family: Arial; */
   overflow: hidden;
 
   --animate-time: 0.5s;
@@ -19,8 +19,13 @@ h1, h2, h3, h4, p, li, div {
   cursor: default;
 }
 
+h1, h2, h3, h4, div {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
 h1 {
   font-size: 16rem;
+  font-weight: 600;
 }
 
 h2 {
@@ -37,6 +42,8 @@ h4 {
 
 p {
   font-size: 1rem;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 300;
 }
 
 li {
@@ -49,6 +56,10 @@ li {
 a {
   color: #0814fd;
   transition: color 0.25s linear;
+}
+
+div {
+  font-weight: 400;
 }
 
 a:hover {
