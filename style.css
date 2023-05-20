@@ -822,4 +822,8 @@ a:hover {
     width: 22rem;
     height: 4.75rem;
   }
+
+  .links h4 {
+    font-size: 1.75rem;
+  }
 }
