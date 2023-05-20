@@ -242,7 +242,7 @@ a:hover {
 }
 
 .contact-button {
-  margin: 1rem;
+  margin-top: 1rem;
   width: 40%;
   height: 3.5rem;
 }
@@ -746,6 +746,12 @@ a:hover {
   }
   .right {
     right: 0;
+  }
+}
+
+@media screen and (min-width: 571px) {
+  .carousel-container {
+    height: 100%;
   }
 }
 
