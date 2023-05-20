@@ -280,6 +280,11 @@ if (navigator.userAgent.includes("Win")) {
   console.log('yay for no windows OS!');
 }
 
+//need this to change instructions on tech section
+if (screen.width < 800) {
+  $('.tip').text('(Tip: try poking stuff!)');
+}
+
 $(document).ready(function() {
   updateProject();
 
