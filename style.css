@@ -732,6 +732,7 @@ a:hover {
   }
 
   .contact-button {
+    z-index: 1000;
     margin-bottom: 3rem;
     height: 6rem;
     font-size: 2rem;
