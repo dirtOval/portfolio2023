@@ -271,7 +271,7 @@ a:hover {
 }
 
 .group {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 100%;
   display: flex;
   align-items: center;
@@ -623,34 +623,85 @@ a:hover {
   .tech-section {
     /* height: 300%; */
     overflow-y: auto;
+    overflow-x: hidden;
   }
   .tech-list {
     width: 100%;
     /* height: 100%; */
-    border: 1px solid teal;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: flex-start; */
+    /* border: 1px solid teal; */
+    /* grid-template-columns: 1fr; */
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     /* align-items: center; */
     /* align-items: center; */
     justify-items: center;
   }
 
   .group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+    grid-template-columns: .33fr .33fr;
+    padding: 3rem 0;
+    margin-left: 20%;
+    /* margin-right: 5rem; */
+  }
+  
+  .bubble {
+    font-size: 1.25rem;
   }
 
   .projects-button {
     position: inline;
   }
 
-  ..body {
-    --bubble-radius: 8rem;
+  body {
+    --bubble-radius: 10rem;
   }
+
+  li {
+    font-size: 1.5rem;
+  }
+
+  .projects-button {
+    width: 12rem;
+    height: 3.75rem;
+    margin-bottom: 1rem;
+  }
+
+  /* TECH SECTION APPARATUS */
+
+  .icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .lang-node {
+    --d: 3rem;
+  }
+
+  .front-node {
+    --d: 3rem;
+  }
+
+  .back-node {
+    --d: 3rem;
+  }
+
+  .test-node {
+    --d: 3rem;
+  }
+
+  .misc-node {
+    --d: 3rem;
+  }
+
+  .games-node {
+    --d: 3rem;
+  }
+
 }
 
 @media screen and (max-width: 570px) {
@@ -660,6 +711,10 @@ a:hover {
 
   p {
     font-size: 1.25rem;
+  }
+
+  .facts p {
+    font-size: 1.5rem;
   }
 
   .mike-container {
@@ -686,6 +741,10 @@ a:hover {
     height: 4rem;
     font-size: 1.5rem;
   }
+
+  .slide {
+    overflow-y: scroll;
+  }
 }
 
 @media screen and (max-width: 410px) {
@@ -711,5 +770,11 @@ a:hover {
 
   .more {
     margin-top: 1rem;
+  }
+
+  .projects-button {
+    font-size: 2rem;
+    width: 22rem;
+    height: 4.75rem;
   }
 }
