@@ -57,36 +57,32 @@ const games = ['images/phaser.png',
 
 const projects  = [
   {
-    title: 'The Thor Store',
-    image: 'images/thor-store.gif',
-    description: 'The front-end of an online clothing store. Worked on a team with two other engineers.',
-    link: 'https://github.com/RFE-2212-FEC-Thor/FEC-Thor',
+    title: 'Get Cookin\'',
+    image: 'images/getCookin2.gif',
+    description: 'A full-stack responsive recipe-finding web app. Worked on a team with six other engineers.',
+    link: 'https://github.com/BlueOcean-FN/Get_Cookin',
     commentary: `
-    The project came together over a few weeks January - February 2022.
+    This one happened really quickly, over the course of a week in March 2022.
     <br><br>
-    We used React with TypeScript, with an Express proxy to talk to the API serving the clothing data. I'd
-    dabbled in TypeScript before, but this was my first time using it for a real project. Because I was the most
-    excited about using TypeScript, it fell to me to set up the repo. Our original plan was to use Create-React-App's
-    TypeScript template, but we were warned doing so would make deploying more annoying later, so I ended up learning
-    how to make Webpack, React, and TypeScript work together. Not sure how much easier it made deploying, but I definitely
-    learned a lot about Webpack in the process. :)
+    The goal was to create an easy-to-use recipe search app powered by the Edamam recipe and food APIs. Our hope was that
+    users would be able to leave it open on their phone, tablet, or laptop while cooking. We initially wanted to develop it
+    as a full on mobile app with React Native, but given the time available we settled for a really responsive React web app.
     <br><br>
-    Another first for me, we used SCSS. At first we were working in one big stylesheet, which turned into 3 little
-    ones feeding into a main file after we swiftly plunged into merge conflict hell. Gotta say, I looove SCSS. The nesting
-    alone makes it totally worth it, and being able to set up simple loops is a big time-saver. I thought really hard about
-    using SCSS for this site, but then I forgot. Next time!
+    I was responsible for the controllers handling requests to the database using node-postgres, as well as designing the schema.
+    Hadn't used PostgreSQL before so that was a learning experience. Broadly the same as mySQL, but with enough minor differences
+    to cause friction. We were only storing user preferences, allergies, and favorited recipes anyway, so it was probably overkill
+    to use Postgres where SQLite would do. Oh well!
     <br><br>
-    My other major contribution to the project was the Product Overview component, pictured on the left. As aforementioned,
-    all of the product data was coming from Axios calls to an API. Setting up TypeScript interfaces for each component's props
-    was tedious, but ultimately a huge time-saver, as far as preventing the sort of bugs that result from thinking data
-    is one type when it's actually another.
+    Aside from building out the search page on the client and helping my teammates with their components, my other major contribution
+    was in figuring out the autocomplete functionality on the recipe search and filtering. We were pulling from the Edamam Food and Grocery
+    API, which on the free tier only allowed 50 requests a minute. The initial version was making an API call every time the state of the
+    search term changed (read: every time a character was added or removed), which as you might imagine blew through the rate limit
+    approximately Right Away. My solution was to debounce the API call, causing it to wait 300ms before making a call. Came to that number
+    through some experimentation, resulting in autocorrection that felt snappy without blowing straight through the rate limit.
     <br><br>
-    This was an enjoyable project for me. I love working on the front-end, especially where animations and transitions are
-    concerned. A lot of the work was more functional, but there were plenty of little details, tiny onmouseover
-    effects and such. The most interesting and fun part of the project was the image gallery. There's a cute animation that
-    plays when the gallery goes into expanded mode, and the zoom view was an interesting challenge that got me whiteboarding
-    to solve. 10/10, would Thor Store again.
-    <br><br><br><br><br><br>
+    I had fun with this one, though I wish we had been able to do it with React Native. The other really cool thing about this project is
+    that I got to learn a little about JSON Web Tokens, which my teammates used for login authentication.
+    <br><br><br><br>
     `
   },
   {
@@ -120,11 +116,44 @@ const projects  = [
     The aforementioned difficulties with the main menu had to do with how Phaser interacts with its surrounding environment.
     More specifically, how it really doesn't do that at all. When it came time to set up the game lobby, I needed a way to
     pass a session ID from React state into Phaser. Unfortunately, the only entrypoint into Phaser is its config file at initialization.
-    So what I ended up doing was going through the Phaser docs (which are, by the way, kind of bad) looking for a property on the config
+    So what I ended up doing was going thro ugh the Phaser docs (which are, by the way, kind of bad) looking for a property on the config
     that I could pass a string into that wouldn't harm anything. What I ended up settling on was the gameTitle property, which just
     displayed in the console upon init, and which was accessible from the main Game object from within Phaser. Tomfoolery, to be sure.
     <br><br><br><br>
 
+    `
+  },
+  {
+    title: 'The Thor Store',
+    image: 'images/thor-store.gif',
+    description: 'The front-end of an online clothing store. Worked on a team with two other engineers.',
+    link: 'https://github.com/RFE-2212-FEC-Thor/FEC-Thor',
+    commentary: `
+    The project came together over a few weeks January - February 2022.
+    <br><br>
+    We used React with TypeScript, with an Express proxy to talk to the API serving the clothing data. I'd
+    dabbled in TypeScript before, but this was my first time using it for a real project. Because I was the most
+    excited about using TypeScript, it fell to me to set up the repo. Our original plan was to use Create-React-App's
+    TypeScript template, but we were warned doing so would make deploying more annoying later, so I ended up learning
+    how to make Webpack, React, and TypeScript work together. Not sure how much easier it made deploying, but I definitely
+    learned a lot about Webpack in the process. :)
+    <br><br>
+    Another first for me, we used SCSS. At first we were working in one big stylesheet, which turned into 3 little
+    ones feeding into a main file after we swiftly plunged into merge conflict hell. Gotta say, I looove SCSS. The nesting
+    alone makes it totally worth it, and being able to set up simple loops is a big time-saver. I thought really hard about
+    using SCSS for this site, but then I forgot. Next time!
+    <br><br>
+    My other major contribution to the project was the Product Overview component, pictured on the left. As aforementioned,
+    all of the product data was coming from Axios calls to an API. Setting up TypeScript interfaces for each component's props
+    was tedious, but ultimately a huge time-saver, as far as preventing the sort of bugs that result from thinking data
+    is one type when it's actually another.
+    <br><br>
+    This was an enjoyable project for me. I love working on the front-end, especially where animations and transitions are
+    concerned. A lot of the work was more functional, but there were plenty of little details, tiny onmouseover
+    effects and such. The most interesting and fun part of the project was the image gallery. There's a cute animation that
+    plays when the gallery goes into expanded mode, and the zoom view was an interesting challenge that got me whiteboarding
+    to solve. 10/10, would Thor Store again.
+    <br><br><br><br><br><br>
     `
   },
   {
